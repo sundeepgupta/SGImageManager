@@ -14,18 +14,16 @@
             return;
         }
         
-        if(self.completionBlock) {
+        if(self.sgCompletionBlock  &&  self.urlString  && image) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.completionBlock(image, self.urlString);
+                self.sgCompletionBlock(image, self.urlString);
             });
         }
     }
 }
 
-
 - (UIImage *)image{
     UIImage *image;
-    
     if(self.urlString){
         NSURL *url = [NSURL URLWithString:self.urlString];
         NSError *error = nil;
@@ -36,7 +34,6 @@
             NSLog(@"Error downloading image. %@", error.localizedDescription);
         }
     }
-    
     return image;
 }
 

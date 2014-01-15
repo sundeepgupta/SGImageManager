@@ -51,10 +51,4 @@
 }
 
 
-
-#pragma mark - CollectionView Delegate
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
-
 @end

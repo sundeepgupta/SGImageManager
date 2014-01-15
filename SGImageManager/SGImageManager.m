@@ -91,7 +91,7 @@
 - (SGFetchImageOperation *)operationForUrlString:(NSString *)urlString completionBlock:(SGFetchImageCompletionBlock)completionBlock {
     SGFetchImageOperation *operation = [SGFetchImageOperation new];
     operation.urlString = urlString;
-    operation.completionBlock = ^(UIImage *operationImage, NSString *operationUrlString){
+    operation.sgCompletionBlock = ^(UIImage *operationImage, NSString *operationUrlString){
         completionBlock(operationImage, operationUrlString);
         [self cacheImage:operationImage forUrlString:operationUrlString];
     };
